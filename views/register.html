@@ -12,7 +12,7 @@
   <div class="main">
     <div class="header">
       <a href="/">
-        <img src="/public/img/logo3.png" alt="">
+        <!--<img src="/public/img/logo3.png" alt="">-->
       </a>
       <h1>用户注册</h1>
     </div>
@@ -52,10 +52,12 @@
         data: formData,
         dataType: 'json',
         success: function (data) {
+          // console.log(data);
           var err_code = data.err_code;
           if (err_code === 0) {
-            // window.alert('注册成功！')
+            window.alert('注册成功！');
             // 服务端重定向针对异步请求无效
+            // 客户端有效
             window.location.href = '/'
           } else if (err_code === 1) {
             window.alert('邮箱已存在！')
